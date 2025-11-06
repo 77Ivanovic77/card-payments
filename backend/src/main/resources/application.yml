@@ -1,0 +1,29 @@
+server:
+  port: 8443
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: changeit
+    key-store-type: PKCS12
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/paymentsdb
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+security:
+  jwt:
+    secret: DtpuUZQziUHZ5H36E6CNw3NfoHew0r1Prs42MvTUWw4=
+    expiration-ms: 3600000
+
+encryption:
+  aes-key: SxUcIx72u75ooDTlatUY1kJSz/AnNnF3Wk6WFnZIggk=
+  hmac-key: QZOwhMG/yTzJPDRn6DtOyyX8tAypNuRbdnE/5U9ZIvg=
+
+logging:
+  level:
+    org.springframework.security: INFO
