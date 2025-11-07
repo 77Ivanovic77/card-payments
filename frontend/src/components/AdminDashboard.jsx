@@ -3,6 +3,7 @@ import { Typography, Paper, Table, TableBody, TableCell, TableContainer, TableHe
 import { listPayments, deletePayment } from '../api/payments';
 import LogoutButton from './LogoutButton';
 import { AuthContext } from '../context/AuthContext';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export default function AdminDashboard() {
@@ -48,7 +49,7 @@ export default function AdminDashboard() {
               <TableCell>Status</TableCell>
               <TableCell>Created At</TableCell>
               <TableCell>Last4</TableCell>
-              <TableCell>Borrar</TableCell>
+              <TableCell>Borrar </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -60,7 +61,7 @@ export default function AdminDashboard() {
                 <TableCell>{tx.status}</TableCell>
                 <TableCell>{tx.createdAt}</TableCell>
                 <TableCell>{tx.last4}</TableCell>
-                <TableCell><Button variant="contained" color="error" onClick={() => handleDelete(tx.id)}>  Borrar </Button> </TableCell> 
+                <TableCell><Button variant="contained" color="error" onClick={() => handleDelete(tx.id)}>  Borrar <DeleteIcon/></Button> </TableCell> 
               </TableRow>
             ))}
           </TableBody>
