@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { listUsers, deleteUser,updateUser } from "../api/user"; // <-- Crearás estas funciones en la API
 import { Button, Table, TableHead, TableBody, TableRow, TableCell } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import EditUserModal from "./EditUserModal";
 //import {Dialog, DialogTitle, DialogContent, DialogActions, TextField} from "@mui/material";
 
@@ -85,7 +86,7 @@ useEffect(() => {
               <TableCell>
                 <Button variant="contained" onClick={() => {setEditingUser(u); setEditName(u.username); setOpenModal(true); setOpen(true);}}>
                   Editar
-                  <DeleteIcon/>
+                  <EditIcon/>
                 </Button>
               </TableCell>
               <TableCell>
